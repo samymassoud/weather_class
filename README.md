@@ -14,8 +14,11 @@ Also it contains forecast for next three days just click icon next to city name.
 		
 Weather widget: has a Powerful caching system !
 
+=========================================
+For Online demo please visit <a href="http://deploy2cloud.com/demo/weather/">Weather class Demo</a>
 
 Default temperature measurement is Celsius, You can change it to Fahrenheit very easy !
+
 	$weather->set_temp_metrics('f');
 
 Weather widget: support many languages and yet can be extended to support more easily !
