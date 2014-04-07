@@ -5,7 +5,7 @@
  * All Documentation included in this document.
  * For further developer note please see the Weather.php class
  * 
- * @version 1.0.0
+ * @version 1.0.1
  * @author Samy Massoud <samymassoud@gmail.com>
  * @link  http://www.deploy2cloud.com/demo/weather
  * 
