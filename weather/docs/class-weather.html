@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
+
+	<title>Class weather | weather_class</title>
+
+	<script type="text/javascript" src="resources/combined.js?2825110220"></script>
+	<script type="text/javascript" src="elementlist.js?2514477009"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+		</div>
+
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-weather.html">weather</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class weather</h1>
+
+
+	<div class="description">
+	
+<p>Weather widget class All Documentation included in this document. For further
+developer note please see the Weather.php class</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		
+
+				<b>Author:</b>
+				Samy Massoud &lt;<a
+href="mailto:samymassoud&#64;gmail.com">samymassoud&#64;<!-- -->gmail.com</a>&gt;<br>
+				<b>Version:</b>
+				1.0.0<br>
+				<b>Link:</b>
+				<a href="http://www.deploy2cloud.com/demo/weather">http://www.deploy2cloud.com/demo/weather</a><br>
+				<b>Tutorial:</b>
+				This class main functionality is to provide weather wedget to use it easily and
+smoothly. You can use this class with almost zero configuration , or configure
+it as far as you need ! When i started to write this class i put in mind to make
+it easy,clean and professional as much as i can. To start using this class just
+do the following 1- include attached weather.css file in your page. 2- Make sure
+that you have embedded jquery version greater than 1.6 3- Include this class in
+your page and Make object from this class with required city $weather = new
+weather ("Cairo,EG"); echo $weather-&gt;get_weather (); And you will get a copy
+from this widget with cairo weather ! To start using this class as codeigniter
+library 1- include attached weather.css file in your page. 2- Make sure that you
+have embedded jquery version greater than 1.6 3- Move weather.php to
+application/libraries folder and you can load library by adding it to
+autoload.php or use $this-&gt;load-&gt;library ('weather'); and at any place in
+your application (Controller or view) $this-&gt;weather-&gt;set_city
+('Cairo,EG'); echo $this-&gt;weather-&gt;get_weather (); And you will get a copy
+from this widget with cairo weather !<br>
+		<b>Located at</b> <a href="source-class-weather.html#3-581" title="Go to source code">weather/weathercore.php</a><br>
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-weather.html#177-235" title="Go to source code">__construct</a>( <span>type <var>$config</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Construct weather widget you can provide any configration you want Click
+right # to see more</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Construct weather widget you can provide any configration you want Click
+right # to see more</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$config</var></dt>
+					<dd><code>type</code><br>array</dd>
+				</dl></div>
+
+
+
+				<h4>Example</h4>
+				<div class="list">
+						$config = array ('theme' =&gt; 'blue', 'city' =&gt; 'cairo,eg', 'temp_metrics'
+=&gt; 'f'); $weather = new weather ($config);<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_city" id="_set_city">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_city">#</a>
+		<code><a href="source-class-weather.html#239-272" title="Go to source code">set_city</a>( <span>type <var>$name</var> = <span class="php-keyword1">null</span></span>, <span>type <var>$id</var> = <span class="php-keyword1">null</span></span>, <span>type <var>$lat</var> = <span class="php-keyword1">null</span></span>, <span>type <var>$lon</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			
+<p>set city by it's name or id or lat. and lon.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>set city by it's name or id or lat. and lon.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd><code>type</code><br>string</dd>
+					<dt><var>$id</var></dt>
+					<dd><code>type</code><br>integer</dd>
+					<dt><var>$lat</var></dt>
+					<dd><code>type</code><br>decimal</dd>
+					<dt><var>$lon</var></dt>
+					<dd><code>type</code><br>decimal</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_theme" id="_set_theme">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_theme">#</a>
+		<code><a href="source-class-weather.html#274-283" title="Go to source code">set_theme</a>( <span>type <var>$theme</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set Theme</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set Theme</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$theme</var></dt>
+					<dd><code>type</code><br>string</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_temp_metrics" id="_set_temp_metrics">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_temp_metrics">#</a>
+		<code><a href="source-class-weather.html#285-292" title="Go to source code">set_temp_metrics</a>( <span>type <var>$metrics</var> = <span class="php-quote">'c'</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Set temp. metrics</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set temp. metrics</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$metrics</var></dt>
+					<dd><code>type</code><br>char</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_lang" id="_set_lang">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_lang">#</a>
+		<code><a href="source-class-weather.html#294-306" title="Go to source code">set_lang</a>( <span>type <var>$lang</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set language</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set language</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$lang</var></dt>
+					<dd><code>type</code><br>string</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_dimention" id="_set_dimention">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_dimention">#</a>
+		<code><a href="source-class-weather.html#308-318" title="Go to source code">set_dimention</a>( <span>type <var>$width</var></span>, <span>type <var>$height</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Set widget dimention</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set widget dimention</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$width</var></dt>
+					<dd><code>type</code><br>integer</dd>
+					<dt><var>$height</var></dt>
+					<dd><code>type</code><br>integer</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_output" id="_set_output">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_output">#</a>
+		<code><a href="source-class-weather.html#320-328" title="Go to source code">set_output</a>( <span>type <var>$out</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Set output type accept empty string or word 'row'</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Set output type accept empty string or word 'row'</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$out</var></dt>
+					<dd><code>type</code><br>string</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set_cache" id="_set_cache">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set_cache">#</a>
+		<code><a href="source-class-weather.html#330-345" title="Go to source code">set_cache</a>( <span>type <var>$cache_time</var></span>, <span>type <var>$cache_folder</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+<p>set cache time and folder and this will enable cache you have to provide
+cache time greater than 0 second and cache folder name is optional , if you
+didn't provide it it will use default cache folder</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>set cache time and folder and this will enable cache you have to provide
+cache time greater than 0 second and cache folder name is optional , if you
+didn't provide it it will use default cache folder</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$cache_time</var></dt>
+					<dd><code>type</code><br>integer</dd>
+					<dt><var>$cache_folder</var></dt>
+					<dd><code>type</code><br>string</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="disable_cache" id="_disable_cache">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_disable_cache">#</a>
+		<code><a href="source-class-weather.html#347-352" title="Go to source code">disable_cache</a>( )</code>
+
+		<div class="description short">
+			
+<p>Stop caching</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Stop caching</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_weather" id="_get_weather">
+
+		<td class="attributes"><code>
+			 public 
+			type
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_weather">#</a>
+		<code><a href="source-class-weather.html#354-403" title="Go to source code">get_weather</a>( )</code>
+
+		<div class="description short">
+			
+<p>get weather widget or row array according to your config
+$this-&gt;weather_info['rain'] array is available if any rain data available AND
+it's array:) Thank's for Ray &lt;<a
+href="mailto:ray&#64;tzweather.org">ray&#64;<!-- -->tzweather.org</a>&gt;</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>get weather widget or row array according to your config
+$this-&gt;weather_info['rain'] array is available if any rain data available AND
+it's array:) Thank's for Ray &lt;<a
+href="mailto:ray&#64;tzweather.org">ray&#64;<!-- -->tzweather.org</a>&gt;</p>
+
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>type</code><br>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		weather_class API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

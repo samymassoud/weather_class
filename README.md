@@ -1,7 +1,5 @@
-weather class
+PHP Weather Class
 =============
-
-PHP Weather class
 Weather class: is a powerful,easy and expendable PHP class !
 
 It's very easy to configure , and it comes with Multi themes !

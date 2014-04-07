@@ -7,7 +7,7 @@
  * 
  * @version 1.0.0
  * @author Samy Massoud <samymassoud@gmail.com>
- * @link  www.egyspac.com/codecanyon/weather/demo.php
+ * @link  http://www.deploy2cloud.com/demo/weather
  * 
  * @tutorial 
  * This class main functionality is to provide weather wedget to use it easily and smoothly.
@@ -137,42 +137,28 @@ class weather {
 	),
 	'it' => array(
 	    'cannot_access' => "Impossibile accedere Meteo",
-	    'invalid_city_info' => "Si prega di selezionare le informazioni città valida",
+	    'invalid_city_info' => "Si prega di selezionare le informazioni cittï¿½ valida",
 	    'show_next_days' => "Mostra previsioni prossimi tre giorni",
 	    'back_to_weather' => "Torna a correnti dettagli meteo",
 	    'weather' => 'Meteo',
 	    'weather_desc' => "descrizione Meteo",
 	    'wind' => 'vento',
 	    'wind_degree' => 'grado Vento',
-	    'humidity' => 'umidità',
+	    'humidity' => 'umiditï¿½',
 	    'pressure' => 'pressione',
 	    'hi' => 'alto',
 	    'lo' => 'basso'
 	),
-	'ru' => array(
-	    'cannot_access' => "?? ??????? ???????? ?????? ?????? API",
-	    'invalid_city_info' => "??????????, ???????? ?????????? ?????????? ?????",
-	    'show_next_days' => "???????? ?????? ????????? ??? ???",
-	    'back_to_weather' => "????????? ? ??????? ??????? ????????",
-	    'weather' => '??????',
-	    'weather_desc' => "???????? ??????",
-	    'wind' => '?????',
-	    'wind_degree' => '??????? ?????',
-	    'humidity' => '?????????',
-	    'pressure' => '????????',
-	    'hi' => '???????',
-	    'lo' => '??????'
-	),
 	'fr' => array(
-	    'cannot_access' => "Impossible d'accéder à l'API Météo",
-	    'invalid_city_info' => "S'il vous plaît sélectionner l'information de la ville valide",
+	    'cannot_access' => "Impossible d'accï¿½der ï¿½ l'API Mï¿½tï¿½o",
+	    'invalid_city_info' => "S'il vous plaï¿½t sï¿½lectionner l'information de la ville valide",
 	    'show_next_days' => "Montrez temps trois prochains jours",
-	    'back_to_weather' => "Retour aux détails météorologiques actuelles",
-	    'weather' => 'météo',
-	    'weather_desc' => "Description météo",
+	    'back_to_weather' => "Retour aux dï¿½tails mï¿½tï¿½orologiques actuelles",
+	    'weather' => 'mï¿½tï¿½o',
+	    'weather_desc' => "Description mï¿½tï¿½o",
 	    'wind' => 'vent',
-	    'wind_degree' => 'Degré de Vent',
-	    'humidity' => 'humidité',
+	    'wind_degree' => 'Degrï¿½ de Vent',
+	    'humidity' => 'humiditï¿½',
 	    'pressure' => 'pression',
 	    'hi' => 'haut',
 	    'lo' => 'faible'
@@ -209,15 +195,19 @@ class weather {
 		//Set City Name
 		if ($key == 'city') {
 		    $this->city = $value;
+                     $this->file_name =  $this->city;
 		}
 		if ($key == 'city_id') {
 		    $this->city_id = $value;
+                     $this->file_name =  $this->city_id;
 		}
 		if ($key == 'city_lat') {
 		    $this->city_lat = $value;
+                     $this->file_name =  $this->city_lat;
 		}
 		if ($key == 'city_lon') {
 		    $this->city_lon = $value;
+                     $this->file_name .=  '_'.$this->city_lon;
 		}
 
 		//Set Tempereature Metrics
@@ -259,6 +249,7 @@ class weather {
 	    $this->city_id = null;
 	    $this->city_lat = null;
 	    $this->city_lon = null;
+            $this->file_name =  $this->city;
 	}
 
 	if ($id) {
@@ -266,16 +257,18 @@ class weather {
 	    $this->city = null;
 	    $this->city_lat = null;
 	    $this->city_lon = null;
+            $this->file_name = $this->city_id;
 	}
 
-	if ($lat) {
+	if ($lat && $lon) {
 	    $this->city_lat = $lat;
+            $this->city_lon = $lon;
 	    $this->city_id = null;
 	    $this->city = null;
+            $this->file_name =  $this->city_lat."_".$this->city_lon;
 	}
 
-	if ($lon)
-	    $this->city_lon = $lon;
+	
     }
 
     /**
@@ -360,6 +353,9 @@ class weather {
 
     /**
      * get weather widget or row array according to your config
+     * $this->weather_info['rain'] array is available if any rain data available
+     * AND it's array:)
+     * Thank's for Ray <ray@tzweather.org>
      * @return type
      */
     public function get_weather() {
@@ -382,7 +378,7 @@ class weather {
 	} else {
 	    $weather = @file_get_contents($this->weather_api . $search_q . '&lang=' . $this->lang_api);
 	}
-
+        
 	if ($weather) {
 	    if (!$read_cache) {
 		$weather_forecast = @file_get_contents($this->forecast_api . $search_q . '&lang=' . $this->lang_api);
@@ -426,6 +422,7 @@ class weather {
 	$this->weather_info['symbol'] = (($this->temp_metric == 'c') ? 'C' : 'F');
 	$this->weather_info['humidity'] = $weather->main->humidity;
 	$this->weather_info['wind_speed'] = $weather->wind->speed;
+        $this->weather_info['rain'] = (isset($weather->rain)) ? (array)$weather->rain : false;
 	//Aditinal info
 	$this->weather_info['wind_degree'] = $weather->wind->deg;
 	$this->weather_info['pressure'] = $weather->main->pressure;
@@ -462,7 +459,7 @@ class weather {
      */
     private function save_weather($weather) {
 	$weather_json = json_encode($weather);
-	$file = $this->cache_folder . $this->city . '.txt';
+	$file = $this->cache_folder . $this->file_name . '.txt';
 	$handle = @fopen($file, 'w');
 	if ($handle) {
 	    fwrite($handle, $weather_json);
@@ -475,7 +472,7 @@ class weather {
      * @return boolean
      */
     private function read_wether() {
-	$file = $this->cache_folder . $this->city . '.txt';
+	$file = $this->cache_folder . $this->file_name . '.txt';
 	if (file_exists($file)) {
 	    if (((time() - $this->cache_time) > filemtime($file)) || !$this->cache)
 		return false; //This file is not fresh or cache disabled
@@ -518,7 +515,6 @@ class weather {
     private function markup() {
 	$next_weather = $this->languages[$this->lang]['show_next_days'];
 	$back_weather = $this->languages[$this->lang]['back_to_weather'];
-
 	$markup = '<div class="widget" style="width:' . $this->width . 'px;height:' . $this->height . 'px"> 
 		   <div class="upper">
 		   <div class="degree-box">
