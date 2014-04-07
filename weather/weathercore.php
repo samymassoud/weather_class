@@ -162,7 +162,21 @@ class weather {
 	    'pressure' => 'pression',
 	    'hi' => 'haut',
 	    'lo' => 'faible'
-	)
+	),//António Lourenço
+        'pt' => array(
+        'cannot_access' => "Impossivel aceder a 'API Meteorologia",
+        'invalid_city_info' => "Selecione uma cidade válida",
+        'show_next_days' => " Previsão nos próximos três dias",
+        'back_to_weather' => "Voltar à previsão de hoje",
+        'weather' => 'Meteorologia',
+        'weather_desc' => "Previsão meteorológica",
+        'wind' => 'Vento',
+        'wind_degree' => 'Orientação do vento',
+        'humidity' => 'Húmidade',
+        'pressure' => 'Pressão atmosférica',
+        'hi' => 'Alta',
+        'lo' => 'Baixa'
+        )
     );
     //Available API Languages ' don't modify
     private $api_lang = array('en', 'it', 'ru', 'fr', 'ua', 'de', 'pt', 'ro', 'pl', 'fi', 'nl', 'sp', 'bg', 'se', 'zh_tw', 'zh_cn', 'tr');
